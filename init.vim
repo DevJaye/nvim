@@ -39,7 +39,10 @@ filetype plugin on
 filetype plugin indent on
 " 设置编码格式
 set encoding=utf-8
+set langmenu=zh_CN.UTF-8
+language message zh_CN.UTF-8
 set fileencoding=utf-8
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 " 可以使用鼠标
 set mouse=a
 " ===
@@ -337,44 +340,45 @@ noremap \g :term lazygit<CR>
 noremap <c-g> :term lazygit<CR>
 " Auto change directory to current dir
 autocmd BufEnter * silent! lcd %:p:h
+" hi Normal  ctermfg=252 ctermbg=none
 " ===============
 "  ---插件安装---
 " ===============
 " Compile function
-" noremap <leader>r :call CompileRunGcc()<CR>
-" func! CompileRunGcc()
-" 	exec "w"
-" 	if &filetype == 'c'
-" 		exec "!g++ % -o %<"
-" 		exec "!time ./%<"
-" 	elseif &filetype == 'cpp'
-" 		set splitbelow
-" 		exec "!g++ -std=c++11 % -Wall -o %<"
-" 		:sp
-" 		:res -15
-" 		:term ./%<
-" 	elseif &filetype == 'java'
-" 		exec "!javac %"
-" 		exec "!time java %<"
-" 	elseif &filetype == 'sh'
-" 		:!time bash %
-" 	elseif &filetype == 'python'
-" 		set splitbelow
-" 		:sp
-" 		:term python3 %
-" 	elseif &filetype == 'html'
-" 		silent! exec "!chromium % &"
-" 	elseif &filetype == 'markdown'
-" 		exec "MarkdownPreview"
-" 	elseif &filetype == 'tex'
-" 		silent! exec "VimtexStop"
-" 		silent! exec "VimtexCompile"
-" 	elseif &filetype == 'go'
-" 		set splitbelow
-" 		:sp
-" 		:term go run %
-" 	endif
-" endfunc
+noremap <leader>r :call CompileRunGcc()<CR>
+func! CompileRunGcc()
+	exec "w"
+	if &filetype == 'c'
+		exec "!g++ % -o %<"
+		exec "!time ./%<"
+	elseif &filetype == 'cpp'
+		set splitbelow
+		exec "!g++ -std=c++11 % -Wall -o %<"
+		:sp
+		:res -15
+		:term ./%<
+	elseif &filetype == 'java'
+		exec "!javac %"
+		exec "!time java %<"
+	elseif &filetype == 'sh'
+		:!time bash %
+	elseif &filetype == 'python'
+		set splitbelow
+		:sp
+		:term python3 %
+	elseif &filetype == 'html'
+		silent! exec "!chromium % &"
+	elseif &filetype == 'markdown'
+		exec "MarkdownPreview"
+	elseif &filetype == 'tex'
+		silent! exec "VimtexStop"
+		silent! exec "VimtexCompile"
+	elseif &filetype == 'go'
+		set splitbelow
+		:sp
+		:term go run %
+	endif
+endfunc
 " ===================
 " ===200 安装开始===
 " ===powershell的nvim的路径===
@@ -436,7 +440,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 " ===============
 " markdwon浏览器预览
-" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync() }, 'for' :['markdown', 'vim-plug'] }
+ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync() }, 'for' :['markdown', 'vim-plug'] }
 " ===============
 " " vim-wiki笔记本体系
 Plug 'vimwiki/vimwiki'
