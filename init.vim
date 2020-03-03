@@ -1,6 +1,6 @@
 " nvim的必要配置
-let g:python3_host_prog='C:\Users\dj\AppData\Local\Programs\Python\Python38\python.exe'
-let g:python_host_prog='C:\Python27\python2.7.exe'
+let g:python3_host_prog='/usr/bin/python3'
+let g:python_host_prog='/usr/bin/python2'
 " ===
 " === Terminal Behaviors
 " ===
@@ -40,7 +40,7 @@ filetype plugin indent on
 " 设置编码格式
 set encoding=utf-8
 set langmenu=zh_CN.UTF-8
-language message zh_CN.UTF-8
+" language message zh_CN.UTF-8
 set fileencoding=utf-8
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 " 可以使用鼠标
@@ -566,17 +566,17 @@ noremap <leader>ty :IndentLinesToggle<CR>
 " ===vim-wiki笔记本体系
 " ===
 let wiki_1 = {}
-let wiki_1.path = '~/Github/TO_DO/'
+let wiki_1.path = '/mnt/c/Users/D_Jaye/Github/TO_DO/'
 let wiki_1.syntax = 'markdown'
 let wiki_1.ext = '.md'
 let g:vimwiki_ext1syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 let wiki_2 = {}
-let wiki_2.path = '~/Github/study_notes/'
+let wiki_2.path = '/mnt/c/Users/D_Jaye/Github/study_notes/'
 let wiki_2.syntax = 'markdown'
 let wiki_2.ext = '.md'
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 let wiki_3 = {}
-let wiki_3.path = '~/Github/work_notes'
+let wiki_3.path = '/mnt/c/Users/D_Jaye/GitLab/work_notes'
 let wiki_3.syntax = 'markdown'
 let wiki_3.ext = '.md'
 let g:vimwiki_list = [wiki_1,wiki_2,wiki_3]
@@ -593,3 +593,4 @@ noremap  <space>pp :call mdip#MarkdownClipboardImage()<CR>
 "noremap <LEADER>tm :TableModeToggle<CR>
 ""let g:table_mode_disable_mappings = 1
 "let g:table_mode_cell_text_object_i_map = 'k<Bar>'
+
